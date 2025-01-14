@@ -1,3 +1,309 @@
-[gd_scene format=3 uid="uid://dmujn6am4j47e"]
+[gd_scene load_steps=15 format=3 uid="uid://dmujn6am4j47e"]
 
-[node name="MainScene" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_level.gd" id="2_56y8w"]
+[ext_resource type="Texture2D" uid="uid://bbs1dfkyj0qeq" path="res://Image/1.png" id="2_batos"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_preview.gd" id="3_mnkht"]
+[ext_resource type="Texture2D" uid="uid://sicjh7a4w5we" path="res://Image/SoundWaveValid.png" id="5_18nrb"]
+[ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_tempo.gd" id="5_vet10"]
+[ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_note.gd" id="6_iuae2"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_confirm_layer.gd" id="7_gadeu"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_finish_level.gd" id="8_otq3q"]
+[ext_resource type="Texture2D" uid="uid://ceklixeawso0u" path="res://Image/SoundWaveGood.png" id="10_7a3ra"]
+[ext_resource type="Texture2D" uid="uid://c3bvv2231tld" path="res://Image/SoundWaveBad.png" id="11_8182c"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelend_end_button_player_preview.gd" id="12_5hllc"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelend_button_play_player_music.gd" id="13_kvfxf"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelend_button_menu.gd" id="14_a35rm"]
+
+[node name="MainScene" type="CanvasLayer"]
+
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/CenterContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/CenterContainer/MarginContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]LayerTune[/center]"
+fit_content = true
+
+[node name="LevelStart" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartImageSoundWave" type="TextureRect" parent="LevelStart"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 198.0
+offset_right = 1002.0
+offset_bottom = 544.0
+scale = Vector2(0.848541, 0.721387)
+texture = ExtResource("1_3jg70")
+
+[node name="ButtonPlayLevel" type="Button" parent="LevelStart"]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 489.0
+offset_right = 713.0
+offset_bottom = 583.0
+theme_override_font_sizes/font_size = 62
+text = "Play level"
+script = ExtResource("2_56y8w")
+
+[node name="StartButtonPlayPreview" type="TextureButton" parent="LevelStart"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 246.0
+offset_right = 308.0
+offset_bottom = 379.0
+texture_normal = ExtResource("2_batos")
+texture_pressed = ExtResource("2_batos")
+texture_hover = ExtResource("2_batos")
+texture_disabled = ExtResource("2_batos")
+texture_focused = ExtResource("2_batos")
+script = ExtResource("3_mnkht")
+
+[node name="LevelPlay" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContainerLayers" type="VBoxContainer" parent="LevelPlay"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(7.43147, 16.2)
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="PlayLayer1" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_3jg70")
+expand_mode = 2
+
+[node name="PlayLayer2" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_3jg70")
+expand_mode = 2
+
+[node name="PlayLayer3" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_3jg70")
+expand_mode = 2
+
+[node name="PlayLayer4" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_18nrb")
+expand_mode = 2
+
+[node name="PlayLayer5" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_18nrb")
+expand_mode = 2
+
+[node name="PlayLayer6" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_18nrb")
+expand_mode = 2
+
+[node name="SliderNote" type="HSlider" parent="LevelPlay"]
+custom_minimum_size = Vector2(500, 0)
+offset_left = 353.0
+offset_top = 198.0
+offset_right = 861.0
+offset_bottom = 223.0
+scale = Vector2(1.34049, 2.22772)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 24.0
+tick_count = 3
+script = ExtResource("6_iuae2")
+
+[node name="SliderTempo" type="HSlider" parent="LevelPlay"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+offset_left = 353.0
+offset_top = 335.0
+offset_right = 861.0
+offset_bottom = 360.0
+scale = Vector2(1.34049, 2.22772)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 50.0
+max_value = 200.0
+step = 5.0
+value = 50.0
+tick_count = 16
+script = ExtResource("5_vet10")
+
+[node name="ButtonConfirmLayer" type="Button" parent="LevelPlay"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 489.0
+offset_right = 834.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 50
+text = "Confirm Layer"
+script = ExtResource("7_gadeu")
+
+[node name="ButtonFinishLevel" type="Button" parent="LevelPlay"]
+visible = false
+offset_left = 484.0
+offset_top = 489.0
+offset_right = 834.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Finish level"
+script = ExtResource("8_otq3q")
+
+[node name="LevelEnd" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContainerLayers" type="VBoxContainer" parent="LevelEnd"]
+offset_left = 713.0
+offset_top = 24.0
+offset_right = 753.0
+offset_bottom = 52.0
+scale = Vector2(7.43147, 16.2)
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="EndLayer1" type="TextureRect" parent="LevelEnd/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("10_7a3ra")
+expand_mode = 2
+
+[node name="EndLayer2" type="TextureRect" parent="LevelEnd/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("10_7a3ra")
+expand_mode = 2
+
+[node name="EndLayer3" type="TextureRect" parent="LevelEnd/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("11_8182c")
+expand_mode = 2
+
+[node name="EndLayer4" type="TextureRect" parent="LevelEnd/ContainerLayers"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("10_7a3ra")
+expand_mode = 2
+
+[node name="EndLayer5" type="TextureRect" parent="LevelEnd/ContainerLayers"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("11_8182c")
+expand_mode = 2
+
+[node name="EndLayer6" type="TextureRect" parent="LevelEnd/ContainerLayers"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("10_7a3ra")
+expand_mode = 2
+
+[node name="EndImageSoundWave" type="TextureRect" parent="LevelEnd"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 198.0
+offset_right = 946.0
+offset_bottom = 544.0
+scale = Vector2(0.552723, 0.491146)
+texture = ExtResource("1_3jg70")
+
+[node name="EndButtonPlayerPreview" type="TextureButton" parent="LevelEnd"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 216.0
+offset_right = 271.0
+offset_bottom = 349.0
+texture_normal = ExtResource("2_batos")
+texture_pressed = ExtResource("2_batos")
+texture_hover = ExtResource("2_batos")
+texture_disabled = ExtResource("2_batos")
+texture_focused = ExtResource("2_batos")
+script = ExtResource("12_5hllc")
+
+[node name="ButtonPlayPlayerMusic" type="TextureButton" parent="LevelEnd"]
+offset_left = 793.0
+offset_top = 491.0
+offset_right = 926.0
+offset_bottom = 624.0
+texture_normal = ExtResource("2_batos")
+texture_pressed = ExtResource("2_batos")
+texture_hover = ExtResource("2_batos")
+texture_disabled = ExtResource("2_batos")
+texture_focused = ExtResource("2_batos")
+script = ExtResource("13_kvfxf")
+
+[node name="ButtonMenu" type="Button" parent="LevelEnd"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 448.0
+offset_right = 466.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 70
+text = "Menu"
+script = ExtResource("14_a35rm")
+
+[connection signal="pressed" from="LevelStart/ButtonPlayLevel" to="LevelStart/ButtonPlayLevel" method="_on_pressed"]
+[connection signal="pressed" from="LevelStart/StartButtonPlayPreview" to="LevelStart/StartButtonPlayPreview" method="_on_pressed"]
+[connection signal="value_changed" from="LevelPlay/SliderNote" to="LevelPlay/SliderNote" method="_on_value_changed"]
+[connection signal="value_changed" from="LevelPlay/SliderTempo" to="LevelPlay/SliderTempo" method="_on_value_changed"]
+[connection signal="pressed" from="LevelPlay/ButtonConfirmLayer" to="LevelPlay/ButtonConfirmLayer" method="_on_pressed"]
+[connection signal="pressed" from="LevelPlay/ButtonFinishLevel" to="LevelPlay/ButtonFinishLevel" method="_on_pressed"]
+[connection signal="pressed" from="LevelEnd/EndButtonPlayerPreview" to="LevelEnd/EndButtonPlayerPreview" method="_on_pressed"]
+[connection signal="pressed" from="LevelEnd/ButtonPlayPlayerMusic" to="LevelEnd/ButtonPlayPlayerMusic" method="_on_pressed"]
+[connection signal="pressed" from="LevelEnd/ButtonMenu" to="LevelEnd/ButtonMenu" method="_on_pressed"]
