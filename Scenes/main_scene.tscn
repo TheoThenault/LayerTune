@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dmujn6am4j47e"]
+[gd_scene load_steps=27 format=3 uid="uid://dmujn6am4j47e"]
 
 [ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
 [ext_resource type="Texture2D" uid="uid://bbs1dfkyj0qeq" path="res://Image/1.png" id="2_batos"]
@@ -21,6 +21,10 @@
 [ext_resource type="AudioStream" uid="uid://0vujd04djlqa" path="res://Ressources/448589__tedagame__f3.ogg" id="15_wuvay"]
 [ext_resource type="AudioStream" uid="uid://b4v5mitxp0ei8" path="res://Ressources/448595__tedagame__f4.ogg" id="16_3psh3"]
 [ext_resource type="AudioStream" uid="uid://b0l2nxc3kn612" path="res://Ressources/687924__johnnie_holiday__jh-big-tom-2-f-15-sec.wav" id="17_q5g2t"]
+[ext_resource type="AudioStream" uid="uid://f7krgann2vh2" path="res://Ressources/60068__hyena__flutef.wav" id="22_8t0th"]
+[ext_resource type="AudioStream" uid="uid://qwcfxjdl8hkk" path="res://Ressources/610198__chaoticnoize__04-f1.wav" id="23_y0ofv"]
+[ext_resource type="AudioStream" uid="uid://bw6mh1uwotyf6" path="res://Ressources/214302__deleted_user_2296865__harmonicaf5.wav" id="24_h0arv"]
+[ext_resource type="AudioStream" uid="uid://crgjqmgbwiwhv" path="res://Ressources/607983__department64__humanatone_15.wav" id="25_qm4jt"]
 
 [sub_resource type="GDScript" id="GDScript_aysw7"]
 script/source = "extends Button
@@ -186,7 +190,7 @@ size_flags_vertical = 3
 max_value = 24.0
 tick_count = 3
 script = ExtResource("6_lh35v")
-bus_name = "Piano"
+bus_name = "Whistle"
 
 [node name="SliderTempo" type="HSlider" parent="LevelPlay"]
 custom_minimum_size = Vector2(500, 0)
@@ -382,40 +386,40 @@ pitch_scale = 3.0
 bus = &"Drum"
 script = ExtResource("11_0l65a")
 
-[node name="BassFlute" type="Node2D" parent="Sounds"]
+[node name="Flute" type="Node2D" parent="Sounds"]
 
-[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/BassFlute"]
-stream = ExtResource("17_q5g2t")
-bus = &"BassFlute"
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("22_8t0th")
+bus = &"Flute"
 script = ExtResource("11_0l65a")
 
-[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/BassFlute"]
-stream = ExtResource("17_q5g2t")
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("22_8t0th")
 pitch_scale = 2.0
-bus = &"BassFlute"
+bus = &"Flute"
 script = ExtResource("11_0l65a")
 
-[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/BassFlute"]
-stream = ExtResource("17_q5g2t")
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("22_8t0th")
 pitch_scale = 3.0
-bus = &"BassFlute"
+bus = &"Flute"
 script = ExtResource("11_0l65a")
 
 [node name="Banjo" type="Node2D" parent="Sounds"]
 
 [node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Banjo"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("23_y0ofv")
 bus = &"Banjo"
 script = ExtResource("11_0l65a")
 
 [node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Banjo"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("23_y0ofv")
 pitch_scale = 2.0
 bus = &"Banjo"
 script = ExtResource("11_0l65a")
 
 [node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Banjo"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("23_y0ofv")
 pitch_scale = 3.0
 bus = &"Banjo"
 script = ExtResource("11_0l65a")
@@ -423,18 +427,18 @@ script = ExtResource("11_0l65a")
 [node name="Harmonica" type="Node2D" parent="Sounds"]
 
 [node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("24_h0arv")
 bus = &"Harmonica"
 script = ExtResource("11_0l65a")
 
 [node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("24_h0arv")
 pitch_scale = 2.0
 bus = &"Harmonica"
 script = ExtResource("11_0l65a")
 
 [node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("24_h0arv")
 pitch_scale = 3.0
 bus = &"Harmonica"
 script = ExtResource("11_0l65a")
@@ -442,18 +446,18 @@ script = ExtResource("11_0l65a")
 [node name="Whistle" type="Node2D" parent="Sounds"]
 
 [node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Whistle"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("25_qm4jt")
 bus = &"Whistle"
 script = ExtResource("11_0l65a")
 
 [node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Whistle"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("25_qm4jt")
 pitch_scale = 2.0
 bus = &"Whistle"
 script = ExtResource("11_0l65a")
 
 [node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Whistle"]
-stream = ExtResource("17_q5g2t")
+stream = ExtResource("25_qm4jt")
 pitch_scale = 3.0
 bus = &"Whistle"
 script = ExtResource("11_0l65a")
