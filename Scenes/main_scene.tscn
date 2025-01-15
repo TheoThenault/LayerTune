@@ -1,21 +1,62 @@
+
+[gd_scene load_steps=27 format=3 uid="uid://dmujn6am4j47e"]
+
+[ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
+
 [gd_scene load_steps=18 format=3 uid="uid://dmujn6am4j47e"]
 
 [ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
 [ext_resource type="Script" path="res://Scripts/Buttons/mainmenu_button_change_level.gd" id="1_4fi25"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_level.gd" id="2_56y8w"]
+
 [ext_resource type="Texture2D" uid="uid://bbs1dfkyj0qeq" path="res://Image/1.png" id="2_batos"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_preview.gd" id="3_mnkht"]
 [ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_tempo.gd" id="5_vet10"]
+
+[ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="6_lh35v"]
+
 [ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_note.gd" id="6_iuae2"]
 [ext_resource type="PackedScene" uid="uid://co6vwoemd2pny" path="res://Scenes/layer.tscn" id="6_oh54e"]
+
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_confirm_layer.gd" id="7_gadeu"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_finish_level.gd" id="8_otq3q"]
 [ext_resource type="Texture2D" uid="uid://ceklixeawso0u" path="res://Image/SoundWaveGood.png" id="10_7a3ra"]
+[ext_resource type="AudioStream" uid="uid://c8hqtmfnwtdpq" path="res://Ressources/448547__tedagame__c2.ogg" id="10_58vae"]
+[ext_resource type="Script" path="res://Scripts/audio_stream_player.gd" id="11_0l65a"]
 [ext_resource type="Texture2D" uid="uid://c3bvv2231tld" path="res://Image/SoundWaveBad.png" id="11_8182c"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplayer_button_play.gd" id="11_vjmqv"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_end_button_player_preview.gd" id="12_5hllc"]
+[ext_resource type="AudioStream" uid="uid://8tle0ghoofsd" path="res://Ressources/448546__tedagame__c3.ogg" id="12_5lv5j"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_button_play_player_music.gd" id="13_kvfxf"]
+[ext_resource type="AudioStream" uid="uid://bb4ftaadkda32" path="res://Ressources/448549__tedagame__c4.ogg" id="13_orkxs"]
+[ext_resource type="AudioStream" uid="uid://c1ew6ptk5v73r" path="res://Ressources/448588__tedagame__f2.ogg" id="14_38c07"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_button_menu.gd" id="14_a35rm"]
+[ext_resource type="AudioStream" uid="uid://0vujd04djlqa" path="res://Ressources/448589__tedagame__f3.ogg" id="15_wuvay"]
+[ext_resource type="AudioStream" uid="uid://b4v5mitxp0ei8" path="res://Ressources/448595__tedagame__f4.ogg" id="16_3psh3"]
+[ext_resource type="AudioStream" uid="uid://b0l2nxc3kn612" path="res://Ressources/687924__johnnie_holiday__jh-big-tom-2-f-15-sec.wav" id="17_q5g2t"]
+[ext_resource type="AudioStream" uid="uid://f7krgann2vh2" path="res://Ressources/60068__hyena__flutef.wav" id="22_8t0th"]
+[ext_resource type="AudioStream" uid="uid://qwcfxjdl8hkk" path="res://Ressources/610198__chaoticnoize__04-f1.wav" id="23_y0ofv"]
+[ext_resource type="AudioStream" uid="uid://bw6mh1uwotyf6" path="res://Ressources/214302__deleted_user_2296865__harmonicaf5.wav" id="24_h0arv"]
+[ext_resource type="AudioStream" uid="uid://crgjqmgbwiwhv" path="res://Ressources/607983__department64__humanatone_15.wav" id="25_qm4jt"]
+
+[sub_resource type="GDScript" id="GDScript_aysw7"]
+script/source = "extends Button
+
+
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#pass # Replace with function body.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#pass
+
+
+func _on_pressed() -> void:
+	print(\"Charger \\\"LevelPlay\\\" avec le bon niveau.\")
+	
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8ng7"]
 bg_color = Color(0.663596, 0.585649, 0.504671, 1)
@@ -159,7 +200,7 @@ offset_right = 713.0
 offset_bottom = 583.0
 theme_override_font_sizes/font_size = 62
 text = "Play level"
-script = ExtResource("2_56y8w")
+script = SubResource("GDScript_aysw7")
 
 [node name="StartButtonPlayPreview" type="TextureButton" parent="LevelStart"]
 layout_mode = 0
@@ -210,7 +251,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 max_value = 24.0
 tick_count = 3
-script = ExtResource("6_iuae2")
+script = ExtResource("6_lh35v")
+bus_name = "Whistle"
 
 [node name="SliderTempo" type="HSlider" parent="LevelPlay"]
 custom_minimum_size = Vector2(500, 0)
@@ -225,7 +267,7 @@ size_flags_vertical = 3
 min_value = 50.0
 max_value = 200.0
 step = 5.0
-value = 50.0
+value = 100.0
 tick_count = 16
 script = ExtResource("5_vet10")
 
@@ -379,6 +421,135 @@ offset_bottom = 552.0
 theme_override_font_sizes/font_size = 70
 text = "Menu"
 script = ExtResource("14_a35rm")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Piano" type="Node2D" parent="Sounds"]
+
+[node name="Do2" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("10_58vae")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Do3" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("12_5lv5j")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Do4" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("13_orkxs")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("14_38c07")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("15_wuvay")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("16_3psh3")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Drum" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("17_q5g2t")
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="Flute" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("22_8t0th")
+bus = &"Flute"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("22_8t0th")
+pitch_scale = 2.0
+bus = &"Flute"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("22_8t0th")
+pitch_scale = 3.0
+bus = &"Flute"
+script = ExtResource("11_0l65a")
+
+[node name="Banjo" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("23_y0ofv")
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("23_y0ofv")
+pitch_scale = 2.0
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("23_y0ofv")
+pitch_scale = 3.0
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Harmonica" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("24_h0arv")
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("24_h0arv")
+pitch_scale = 2.0
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("24_h0arv")
+pitch_scale = 3.0
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Whistle" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("25_qm4jt")
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("25_qm4jt")
+pitch_scale = 2.0
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("25_qm4jt")
+pitch_scale = 3.0
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
 
 [connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel1" to="MainMenu/HBoxContainer/ButtonLevel1" method="_on_pressed"]
 [connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel2" to="MainMenu/HBoxContainer/ButtonLevel2" method="_on_pressed"]
