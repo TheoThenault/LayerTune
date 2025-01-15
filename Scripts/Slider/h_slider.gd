@@ -18,6 +18,10 @@ func _ready() -> void:
 	play()
 
 func _on_value_changed(value: float) -> void:
+	
+	var labelNOTE : Label = get_node("../LabelNOTE")
+	labelNOTE.text = "%d" % (value + 1)
+	
 	'''get_node("../../Sounds/"+bus_name+"/Do2").stop()
 	get_node("../../Sounds/"+bus_name+"/Do3").stop()
 	get_node("../../Sounds/"+bus_name+"/Do4").stop()'''

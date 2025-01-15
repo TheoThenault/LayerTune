@@ -14,3 +14,6 @@ func _process(delta: float) -> void:
 	
 func _on_value_changed(value_: float) -> void:
 	intervalle = 60/value
+	
+	var labelBPM : Label = get_node("../LabelBPM")
+	labelBPM.text = "%d" % (value_)
