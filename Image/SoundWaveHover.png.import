@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dookg6ar7lir7"
-path="res://.godot/imported/Neco-Arc_(Melty_Blood).png-01d5e82d94319781d4f824d09b6c6fa0.ctex"
+uid="uid://bl2rnvccvft03"
+path="res://.godot/imported/SoundWaveHover.png-c2958313a25e392a9df518b66d43fa73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/Buttons/Neco-Arc_(Melty_Blood).png"
-dest_files=["res://.godot/imported/Neco-Arc_(Melty_Blood).png-01d5e82d94319781d4f824d09b6c6fa0.ctex"]
+source_file="res://Image/SoundWaveHover.png"
+dest_files=["res://.godot/imported/SoundWaveHover.png-c2958313a25e392a9df518b66d43fa73.ctex"]
 
 [params]
 

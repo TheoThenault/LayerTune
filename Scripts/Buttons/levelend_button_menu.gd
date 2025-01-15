@@ -13,3 +13,13 @@ extends Button
 
 func _on_pressed() -> void:
 	print("Retourner au menu et passer le niveau en validé ou pas.")
+	GAME.LevelEnd.hide()
+	GAME.MainMenu.show()
+	
+	var container : VBoxContainer = get_node("../../LevelPlay/ContainerLayers")
+	for child in container.get_children():
+		child.queue_free()
+		#container.remove_child()
+	get_node("../../NIVEAU").queue_free()
+	
+	

@@ -13,3 +13,5 @@ extends Button
 
 func _on_pressed() -> void:
 	print("Level finished go to \"LevelEnd\"")
+	GAME.LevelPlay.hide()
+	GAME.LevelEnd.show()

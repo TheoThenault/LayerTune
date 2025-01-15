@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgpo4qmtij7fq"]
+
+[ext_resource type="Script" path="res://Levels/niveau_script.gd" id="1_mv01y"]
+
+[node name="Niveau" type="Node"]
+script = ExtResource("1_mv01y")
+enable1 = true
+instrument1 = "Drum"
+note1 = 4
