@@ -1,19 +1,28 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmujn6am4j47e"]
+[gd_scene load_steps=24 format=3 uid="uid://dmujn6am4j47e"]
 
 [ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_level.gd" id="2_56y8w"]
 [ext_resource type="Texture2D" uid="uid://bbs1dfkyj0qeq" path="res://Image/1.png" id="2_batos"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_preview.gd" id="3_mnkht"]
 [ext_resource type="Texture2D" uid="uid://sicjh7a4w5we" path="res://Image/SoundWaveValid.png" id="5_18nrb"]
+[ext_resource type="Script" path="res://Scenes/play_layer.gd" id="5_52avb"]
 [ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_tempo.gd" id="5_vet10"]
-[ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_note.gd" id="6_iuae2"]
+[ext_resource type="Script" path="res://Scenes/h_slider.gd" id="6_lh35v"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_confirm_layer.gd" id="7_gadeu"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_finish_level.gd" id="8_otq3q"]
 [ext_resource type="Texture2D" uid="uid://ceklixeawso0u" path="res://Image/SoundWaveGood.png" id="10_7a3ra"]
+[ext_resource type="AudioStream" uid="uid://c8hqtmfnwtdpq" path="res://Ressources/448547__tedagame__c2.ogg" id="10_58vae"]
+[ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="11_0l65a"]
 [ext_resource type="Texture2D" uid="uid://c3bvv2231tld" path="res://Image/SoundWaveBad.png" id="11_8182c"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_end_button_player_preview.gd" id="12_5hllc"]
+[ext_resource type="AudioStream" uid="uid://8tle0ghoofsd" path="res://Ressources/448546__tedagame__c3.ogg" id="12_5lv5j"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_button_play_player_music.gd" id="13_kvfxf"]
+[ext_resource type="AudioStream" uid="uid://bb4ftaadkda32" path="res://Ressources/448549__tedagame__c4.ogg" id="13_orkxs"]
+[ext_resource type="AudioStream" uid="uid://c1ew6ptk5v73r" path="res://Ressources/448588__tedagame__f2.ogg" id="14_38c07"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_button_menu.gd" id="14_a35rm"]
+[ext_resource type="AudioStream" uid="uid://0vujd04djlqa" path="res://Ressources/448589__tedagame__f3.ogg" id="15_wuvay"]
+[ext_resource type="AudioStream" uid="uid://b4v5mitxp0ei8" path="res://Ressources/448595__tedagame__f4.ogg" id="16_3psh3"]
+[ext_resource type="AudioStream" uid="uid://b0l2nxc3kn612" path="res://Ressources/687924__johnnie_holiday__jh-big-tom-2-f-15-sec.wav" id="17_q5g2t"]
 
 [node name="MainScene" type="CanvasLayer"]
 
@@ -94,7 +103,6 @@ texture_focused = ExtResource("2_batos")
 script = ExtResource("3_mnkht")
 
 [node name="LevelPlay" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -115,6 +123,7 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_3jg70")
 expand_mode = 2
+script = ExtResource("5_52avb")
 
 [node name="PlayLayer2" type="TextureRect" parent="LevelPlay/ContainerLayers"]
 layout_mode = 2
@@ -150,6 +159,7 @@ expand_mode = 2
 
 [node name="SliderNote" type="HSlider" parent="LevelPlay"]
 custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
 offset_left = 353.0
 offset_top = 198.0
 offset_right = 861.0
@@ -159,7 +169,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 max_value = 24.0
 tick_count = 3
-script = ExtResource("6_iuae2")
+script = ExtResource("6_lh35v")
+bus_name = "Piano"
 
 [node name="SliderTempo" type="HSlider" parent="LevelPlay"]
 custom_minimum_size = Vector2(500, 0)
@@ -174,7 +185,7 @@ size_flags_vertical = 3
 min_value = 50.0
 max_value = 200.0
 step = 5.0
-value = 50.0
+value = 100.0
 tick_count = 16
 script = ExtResource("5_vet10")
 
@@ -190,6 +201,7 @@ script = ExtResource("7_gadeu")
 
 [node name="ButtonFinishLevel" type="Button" parent="LevelPlay"]
 visible = false
+layout_mode = 0
 offset_left = 484.0
 offset_top = 489.0
 offset_right = 834.0
@@ -199,7 +211,135 @@ disabled = true
 text = "Finish level"
 script = ExtResource("8_otq3q")
 
+[node name="Piano" type="Node2D" parent="LevelPlay"]
+
+[node name="Do2" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
+stream = ExtResource("10_58vae")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Do3" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
+stream = ExtResource("12_5lv5j")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Do4" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
+stream = ExtResource("13_orkxs")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
+stream = ExtResource("14_38c07")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
+stream = ExtResource("15_wuvay")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
+stream = ExtResource("16_3psh3")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Drum" type="Node2D" parent="LevelPlay"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Drum"]
+stream = ExtResource("17_q5g2t")
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Drum"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Drum"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="BassFlute" type="Node2D" parent="LevelPlay"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/BassFlute"]
+stream = ExtResource("17_q5g2t")
+bus = &"BassFlute"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/BassFlute"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"BassFlute"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/BassFlute"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"BassFlute"
+script = ExtResource("11_0l65a")
+
+[node name="Banjo" type="Node2D" parent="LevelPlay"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Banjo"]
+stream = ExtResource("17_q5g2t")
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Banjo"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Banjo"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Harmonica" type="Node2D" parent="LevelPlay"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Harmonica"]
+stream = ExtResource("17_q5g2t")
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Harmonica"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Harmonica"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Whistle" type="Node2D" parent="LevelPlay"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Whistle"]
+stream = ExtResource("17_q5g2t")
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Whistle"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Whistle"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
+
 [node name="LevelEnd" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,6 +348,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ContainerLayers" type="VBoxContainer" parent="LevelEnd"]
+layout_mode = 0
 offset_left = 713.0
 offset_top = 24.0
 offset_right = 753.0
@@ -277,6 +418,7 @@ texture_focused = ExtResource("2_batos")
 script = ExtResource("12_5hllc")
 
 [node name="ButtonPlayPlayerMusic" type="TextureButton" parent="LevelEnd"]
+layout_mode = 0
 offset_left = 793.0
 offset_top = 491.0
 offset_right = 926.0
