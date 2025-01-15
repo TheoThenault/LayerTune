@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://cer25wms6k4dx"]
 
-[ext_resource type="Script" path="res://Scenes/h_slider.gd" id="1_gjvrj"]
+[ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="1_gjvrj"]
 [ext_resource type="Texture2D" uid="uid://g4tqhg3rwmng" path="res://Ressources/sound.jpg" id="1_shag8"]
 [ext_resource type="AudioStream" uid="uid://c8hqtmfnwtdpq" path="res://Ressources/448547__tedagame__c2.ogg" id="3_f0vpy"]
-[ext_resource type="Script" path="res://Scenes/audio_stream_player.gd" id="3_xs0lo"]
+[ext_resource type="Script" path="res://Scripts/audio_stream_player.gd" id="3_xs0lo"]
 [ext_resource type="AudioStream" uid="uid://8tle0ghoofsd" path="res://Ressources/448546__tedagame__c3.ogg" id="5_meyea"]
 [ext_resource type="AudioStream" uid="uid://bb4ftaadkda32" path="res://Ressources/448549__tedagame__c4.ogg" id="6_esgjw"]
 [ext_resource type="AudioStream" uid="uid://c1ew6ptk5v73r" path="res://Ressources/448588__tedagame__f2.ogg" id="7_mwkwu"]
