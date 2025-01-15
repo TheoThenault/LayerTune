@@ -13,4 +13,6 @@ extends Button
 
 func _on_pressed() -> void:
 	print("Charger \"LevelPlay\" avec le bon niveau.")
+	GAME.LevelStart.hide()
+	GAME.LevelPlay.show()
 	

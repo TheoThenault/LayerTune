@@ -4,3 +4,6 @@
 
 [node name="Niveau" type="Node"]
 script = ExtResource("1_mv01y")
+enable1 = true
+instrument1 = "Drum"
+note1 = 4
