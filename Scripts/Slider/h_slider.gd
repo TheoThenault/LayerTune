@@ -14,16 +14,16 @@ func _ready() -> void:
 	AudioServer.add_bus_effect(bus_index, pitchshift)
 	#get_node("../"+bus_name+"/Do2").play()
 	pitchshift.pitch_scale = pow(2, (value-5)/12.0)
-	currentNote = get_node("../"+bus_name+"/Fa2")
+	currentNote = get_node("../../Sounds/"+bus_name+"/Fa2")
 	play()
 
 func _on_value_changed(value: float) -> void:
-	'''get_node("../"+bus_name+"/Do2").stop()
-	get_node("../"+bus_name+"/Do3").stop()
-	get_node("../"+bus_name+"/Do4").stop()'''
-	get_node("../"+bus_name+"/Fa2").stop()
-	get_node("../"+bus_name+"/Fa3").stop()
-	get_node("../"+bus_name+"/Fa4").stop()
+	'''get_node("../../Sounds/"+bus_name+"/Do2").stop()
+	get_node("../../Sounds/"+bus_name+"/Do3").stop()
+	get_node("../../Sounds/"+bus_name+"/Do4").stop()'''
+	get_node("../../Sounds/"+bus_name+"/Fa2").stop()
+	get_node("../../Sounds/"+bus_name+"/Fa3").stop()
+	get_node("../../Sounds/"+bus_name+"/Fa4").stop()
 	
 	'''if (value > 29):
 		pitchshift.pitch_scale = pow(2, (value-29)/12.0)
@@ -46,13 +46,13 @@ func _on_value_changed(value: float) -> void:
 	
 	if (value > 23):
 		pitchshift.pitch_scale = pow(2, (value-29)/12.0)
-		currentNote = get_node("../"+bus_name+"/Fa4")
+		currentNote = get_node("../../Sounds/"+bus_name+"/Fa4")
 	elif (value > 11):
 		pitchshift.pitch_scale = pow(2, (value-17)/12.0)
-		currentNote = get_node("../"+bus_name+"/Fa3")
+		currentNote = get_node("../../Sounds/"+bus_name+"/Fa3")
 	else:
 		pitchshift.pitch_scale = pow(2, (value-5)/12.0)
-		currentNote = get_node("../"+bus_name+"/Fa2")
+		currentNote = get_node("../../Sounds/"+bus_name+"/Fa2")
 	play()
 		
 func play() -> void:

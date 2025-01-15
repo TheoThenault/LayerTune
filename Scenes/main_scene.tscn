@@ -227,133 +227,6 @@ disabled = true
 text = "Finish level"
 script = ExtResource("8_otq3q")
 
-[node name="Piano" type="Node2D" parent="LevelPlay"]
-
-[node name="Do2" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
-stream = ExtResource("10_58vae")
-bus = &"Piano"
-script = ExtResource("11_0l65a")
-
-[node name="Do3" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
-stream = ExtResource("12_5lv5j")
-bus = &"Piano"
-script = ExtResource("11_0l65a")
-
-[node name="Do4" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
-stream = ExtResource("13_orkxs")
-bus = &"Piano"
-script = ExtResource("11_0l65a")
-
-[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
-stream = ExtResource("14_38c07")
-bus = &"Piano"
-script = ExtResource("11_0l65a")
-
-[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
-stream = ExtResource("15_wuvay")
-bus = &"Piano"
-script = ExtResource("11_0l65a")
-
-[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Piano"]
-stream = ExtResource("16_3psh3")
-bus = &"Piano"
-script = ExtResource("11_0l65a")
-
-[node name="Drum" type="Node2D" parent="LevelPlay"]
-
-[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Drum"]
-stream = ExtResource("17_q5g2t")
-bus = &"Drum"
-script = ExtResource("11_0l65a")
-
-[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Drum"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 2.0
-bus = &"Drum"
-script = ExtResource("11_0l65a")
-
-[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Drum"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 3.0
-bus = &"Drum"
-script = ExtResource("11_0l65a")
-
-[node name="BassFlute" type="Node2D" parent="LevelPlay"]
-
-[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/BassFlute"]
-stream = ExtResource("17_q5g2t")
-bus = &"BassFlute"
-script = ExtResource("11_0l65a")
-
-[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/BassFlute"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 2.0
-bus = &"BassFlute"
-script = ExtResource("11_0l65a")
-
-[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/BassFlute"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 3.0
-bus = &"BassFlute"
-script = ExtResource("11_0l65a")
-
-[node name="Banjo" type="Node2D" parent="LevelPlay"]
-
-[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Banjo"]
-stream = ExtResource("17_q5g2t")
-bus = &"Banjo"
-script = ExtResource("11_0l65a")
-
-[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Banjo"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 2.0
-bus = &"Banjo"
-script = ExtResource("11_0l65a")
-
-[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Banjo"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 3.0
-bus = &"Banjo"
-script = ExtResource("11_0l65a")
-
-[node name="Harmonica" type="Node2D" parent="LevelPlay"]
-
-[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Harmonica"]
-stream = ExtResource("17_q5g2t")
-bus = &"Harmonica"
-script = ExtResource("11_0l65a")
-
-[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Harmonica"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 2.0
-bus = &"Harmonica"
-script = ExtResource("11_0l65a")
-
-[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Harmonica"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 3.0
-bus = &"Harmonica"
-script = ExtResource("11_0l65a")
-
-[node name="Whistle" type="Node2D" parent="LevelPlay"]
-
-[node name="Fa2" type="AudioStreamPlayer" parent="LevelPlay/Whistle"]
-stream = ExtResource("17_q5g2t")
-bus = &"Whistle"
-script = ExtResource("11_0l65a")
-
-[node name="Fa3" type="AudioStreamPlayer" parent="LevelPlay/Whistle"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 2.0
-bus = &"Whistle"
-script = ExtResource("11_0l65a")
-
-[node name="Fa4" type="AudioStreamPlayer" parent="LevelPlay/Whistle"]
-stream = ExtResource("17_q5g2t")
-pitch_scale = 3.0
-bus = &"Whistle"
-script = ExtResource("11_0l65a")
-
 [node name="LevelEnd" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -455,6 +328,135 @@ offset_bottom = 552.0
 theme_override_font_sizes/font_size = 70
 text = "Menu"
 script = ExtResource("14_a35rm")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Piano" type="Node2D" parent="Sounds"]
+
+[node name="Do2" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("10_58vae")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Do3" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("12_5lv5j")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Do4" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("13_orkxs")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("14_38c07")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("15_wuvay")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("16_3psh3")
+bus = &"Piano"
+script = ExtResource("11_0l65a")
+
+[node name="Drum" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("17_q5g2t")
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Drum"
+script = ExtResource("11_0l65a")
+
+[node name="BassFlute" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/BassFlute"]
+stream = ExtResource("17_q5g2t")
+bus = &"BassFlute"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/BassFlute"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"BassFlute"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/BassFlute"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"BassFlute"
+script = ExtResource("11_0l65a")
+
+[node name="Banjo" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("17_q5g2t")
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Banjo"
+script = ExtResource("11_0l65a")
+
+[node name="Harmonica" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("17_q5g2t")
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Harmonica"
+script = ExtResource("11_0l65a")
+
+[node name="Whistle" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("17_q5g2t")
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 2.0
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("17_q5g2t")
+pitch_scale = 3.0
+bus = &"Whistle"
+script = ExtResource("11_0l65a")
 
 [connection signal="pressed" from="LevelStart/ButtonPlayLevel" to="LevelStart/ButtonPlayLevel" method="_on_pressed"]
 [connection signal="pressed" from="LevelStart/StartButtonPlayPreview" to="LevelStart/StartButtonPlayPreview" method="_on_pressed"]
