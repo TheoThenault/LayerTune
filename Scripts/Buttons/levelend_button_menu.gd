@@ -20,6 +20,8 @@ func _on_pressed() -> void:
 	for child in container.get_children():
 		child.queue_free()
 		#container.remove_child()
-	get_node("../../NIVEAU").queue_free()
+	var niveau = get_node("../../NIVEAU")
+	if(niveau):
+		niveau.queue_free()
 	
 	
