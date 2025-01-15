@@ -1,17 +1,30 @@
+
 [gd_scene load_steps=27 format=3 uid="uid://dmujn6am4j47e"]
 
 [ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
+
+[gd_scene load_steps=18 format=3 uid="uid://dmujn6am4j47e"]
+
+[ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
+[ext_resource type="Script" path="res://Scripts/Buttons/mainmenu_button_change_level.gd" id="1_4fi25"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_level.gd" id="2_56y8w"]
+
 [ext_resource type="Texture2D" uid="uid://bbs1dfkyj0qeq" path="res://Image/1.png" id="2_batos"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_preview.gd" id="3_mnkht"]
-[ext_resource type="Texture2D" uid="uid://sicjh7a4w5we" path="res://Image/SoundWaveValid.png" id="5_18nrb"]
 [ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_tempo.gd" id="5_vet10"]
+
 [ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="6_lh35v"]
+
+[ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_note.gd" id="6_iuae2"]
+[ext_resource type="PackedScene" uid="uid://co6vwoemd2pny" path="res://Scenes/layer.tscn" id="6_oh54e"]
+
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_confirm_layer.gd" id="7_gadeu"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_finish_level.gd" id="8_otq3q"]
 [ext_resource type="Texture2D" uid="uid://ceklixeawso0u" path="res://Image/SoundWaveGood.png" id="10_7a3ra"]
 [ext_resource type="AudioStream" uid="uid://c8hqtmfnwtdpq" path="res://Ressources/448547__tedagame__c2.ogg" id="10_58vae"]
 [ext_resource type="Script" path="res://Scripts/audio_stream_player.gd" id="11_0l65a"]
 [ext_resource type="Texture2D" uid="uid://c3bvv2231tld" path="res://Image/SoundWaveBad.png" id="11_8182c"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelplayer_button_play.gd" id="11_vjmqv"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_end_button_player_preview.gd" id="12_5hllc"]
 [ext_resource type="AudioStream" uid="uid://8tle0ghoofsd" path="res://Ressources/448546__tedagame__c3.ogg" id="12_5lv5j"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelend_button_play_player_music.gd" id="13_kvfxf"]
@@ -45,19 +58,28 @@ func _on_pressed() -> void:
 	
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8ng7"]
+bg_color = Color(0.663596, 0.585649, 0.504671, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.588235, 0.462745, 0.223529, 1)
+border_blend = true
+
 [node name="MainScene" type="CanvasLayer"]
 
-[node name="MainMenu" type="Control" parent="."]
-visible = false
-layout_mode = 3
+[node name="PanelBackground" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8ng7")
 
-[node name="Panel" type="Panel" parent="MainMenu"]
-layout_mode = 1
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -74,13 +96,83 @@ grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/CenterContainer"]
 layout_mode = 2
+theme_override_constants/margin_bottom = 144
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/CenterContainer/MarginContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 110
 bbcode_enabled = true
-text = "[center]LayerTune[/center]"
+text = "[wave][center]LayerTune[/center][/wave]"
 fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 379.0
+offset_right = -42.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="ButtonLevel1" type="Button" parent="MainMenu/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "1"
+script = ExtResource("1_4fi25")
+num_level = 1
+
+[node name="ButtonLevel2" type="Button" parent="MainMenu/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "2"
+script = ExtResource("1_4fi25")
+num_level = 2
+
+[node name="ButtonLevel3" type="Button" parent="MainMenu/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "3"
+script = ExtResource("1_4fi25")
+num_level = 3
+
+[node name="ButtonLevel4" type="Button" parent="MainMenu/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "4"
+script = ExtResource("1_4fi25")
+num_level = 4
+
+[node name="ButtonLevel5" type="Button" parent="MainMenu/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "5"
+script = ExtResource("1_4fi25")
+num_level = 5
+
+[node name="ButtonLevel6" type="Button" parent="MainMenu/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+text = "6"
+script = ExtResource("1_4fi25")
+num_level = 6
 
 [node name="LevelStart" type="Control" parent="."]
 visible = false
@@ -133,56 +225,26 @@ grow_vertical = 2
 
 [node name="ContainerLayers" type="VBoxContainer" parent="LevelPlay"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 18.0
+offset_top = 24.0
+offset_right = 58.0
+offset_bottom = 55.0
 scale = Vector2(7.43147, 16.2)
 theme_override_constants/separation = 1
 alignment = 1
 
-[node name="PlayLayer1" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+[node name="PlayLayer1" parent="LevelPlay/ContainerLayers" instance=ExtResource("6_oh54e")]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("1_3jg70")
-expand_mode = 2
 
-[node name="PlayLayer2" type="TextureRect" parent="LevelPlay/ContainerLayers"]
+[node name="PlayLayer2" parent="LevelPlay/ContainerLayers" instance=ExtResource("6_oh54e")]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("1_3jg70")
-expand_mode = 2
-
-[node name="PlayLayer3" type="TextureRect" parent="LevelPlay/ContainerLayers"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("1_3jg70")
-expand_mode = 2
-
-[node name="PlayLayer4" type="TextureRect" parent="LevelPlay/ContainerLayers"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_18nrb")
-expand_mode = 2
-
-[node name="PlayLayer5" type="TextureRect" parent="LevelPlay/ContainerLayers"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_18nrb")
-expand_mode = 2
-
-[node name="PlayLayer6" type="TextureRect" parent="LevelPlay/ContainerLayers"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("5_18nrb")
-expand_mode = 2
 
 [node name="SliderNote" type="HSlider" parent="LevelPlay"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 0
-offset_left = 353.0
+offset_left = 425.0
 offset_top = 198.0
-offset_right = 861.0
+offset_right = 933.0
 offset_bottom = 223.0
 scale = Vector2(1.34049, 2.22772)
 size_flags_horizontal = 3
@@ -195,9 +257,9 @@ bus_name = "Whistle"
 [node name="SliderTempo" type="HSlider" parent="LevelPlay"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-offset_left = 353.0
+offset_left = 425.0
 offset_top = 335.0
-offset_right = 861.0
+offset_right = 933.0
 offset_bottom = 360.0
 scale = Vector2(1.34049, 2.22772)
 size_flags_horizontal = 3
@@ -211,9 +273,9 @@ script = ExtResource("5_vet10")
 
 [node name="ButtonConfirmLayer" type="Button" parent="LevelPlay"]
 layout_mode = 0
-offset_left = 484.0
+offset_left = 556.0
 offset_top = 489.0
-offset_right = 834.0
+offset_right = 906.0
 offset_bottom = 566.0
 theme_override_font_sizes/font_size = 50
 text = "Confirm Layer"
@@ -230,6 +292,33 @@ theme_override_font_sizes/font_size = 50
 disabled = true
 text = "Finish level"
 script = ExtResource("8_otq3q")
+
+[node name="ButtonPlay" type="TextureButton" parent="LevelPlay"]
+offset_left = 103.0
+offset_top = 526.0
+offset_right = 236.0
+offset_bottom = 659.0
+texture_normal = ExtResource("2_batos")
+texture_pressed = ExtResource("2_batos")
+texture_hover = ExtResource("2_batos")
+texture_disabled = ExtResource("2_batos")
+texture_focused = ExtResource("2_batos")
+script = ExtResource("11_vjmqv")
+
+[node name="LabelBPM" type="Label" parent="LevelPlay"]
+layout_mode = 0
+offset_left = 1148.0
+offset_top = 349.0
+offset_right = 1188.0
+offset_bottom = 372.0
+text = "50"
+
+[node name="LabelNOTE" type="Label" parent="LevelPlay"]
+offset_left = 1148.0
+offset_top = 216.0
+offset_right = 1188.0
+offset_bottom = 239.0
+text = "50"
 
 [node name="LevelEnd" type="Control" parent="."]
 visible = false
@@ -462,12 +551,19 @@ pitch_scale = 3.0
 bus = &"Whistle"
 script = ExtResource("11_0l65a")
 
+[connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel1" to="MainMenu/HBoxContainer/ButtonLevel1" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel2" to="MainMenu/HBoxContainer/ButtonLevel2" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel3" to="MainMenu/HBoxContainer/ButtonLevel3" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel4" to="MainMenu/HBoxContainer/ButtonLevel4" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel5" to="MainMenu/HBoxContainer/ButtonLevel5" method="_on_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/ButtonLevel6" to="MainMenu/HBoxContainer/ButtonLevel6" method="_on_pressed"]
 [connection signal="pressed" from="LevelStart/ButtonPlayLevel" to="LevelStart/ButtonPlayLevel" method="_on_pressed"]
 [connection signal="pressed" from="LevelStart/StartButtonPlayPreview" to="LevelStart/StartButtonPlayPreview" method="_on_pressed"]
 [connection signal="value_changed" from="LevelPlay/SliderNote" to="LevelPlay/SliderNote" method="_on_value_changed"]
 [connection signal="value_changed" from="LevelPlay/SliderTempo" to="LevelPlay/SliderTempo" method="_on_value_changed"]
 [connection signal="pressed" from="LevelPlay/ButtonConfirmLayer" to="LevelPlay/ButtonConfirmLayer" method="_on_pressed"]
 [connection signal="pressed" from="LevelPlay/ButtonFinishLevel" to="LevelPlay/ButtonFinishLevel" method="_on_pressed"]
+[connection signal="pressed" from="LevelPlay/ButtonPlay" to="LevelPlay/ButtonPlay" method="_on_pressed"]
 [connection signal="pressed" from="LevelEnd/EndButtonPlayerPreview" to="LevelEnd/EndButtonPlayerPreview" method="_on_pressed"]
 [connection signal="pressed" from="LevelEnd/ButtonPlayPlayerMusic" to="LevelEnd/ButtonPlayPlayerMusic" method="_on_pressed"]
 [connection signal="pressed" from="LevelEnd/ButtonMenu" to="LevelEnd/ButtonMenu" method="_on_pressed"]

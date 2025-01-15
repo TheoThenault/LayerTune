@@ -16,9 +16,16 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://Image/NecoArc.png"
 config/icon="res://icon.svg"
 
+[autoload]
+
+GAME="*res://Scripts/Game.gd"
+
 [display]
 
-window/stretch/scale_mode="integer"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [rendering]
 

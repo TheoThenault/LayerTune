@@ -10,6 +10,6 @@ extends Button
 #func _process(delta: float) -> void:
 	#pass
 
-
 func _on_pressed() -> void:
 	print("Confirm layer pressed, verify if values are good :)")
+	GAME.verify_layer()
