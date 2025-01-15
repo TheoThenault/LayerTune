@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://cer25wms6k4dx"]
+
+[ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="1_gjvrj"]
+[ext_resource type="Texture2D" uid="uid://g4tqhg3rwmng" path="res://Ressources/sound.jpg" id="1_shag8"]
+[ext_resource type="AudioStream" uid="uid://c8hqtmfnwtdpq" path="res://Ressources/448547__tedagame__c2.ogg" id="3_f0vpy"]
+[ext_resource type="Script" path="res://Scripts/audio_stream_player.gd" id="3_xs0lo"]
+[ext_resource type="AudioStream" uid="uid://8tle0ghoofsd" path="res://Ressources/448546__tedagame__c3.ogg" id="5_meyea"]
+[ext_resource type="AudioStream" uid="uid://bb4ftaadkda32" path="res://Ressources/448549__tedagame__c4.ogg" id="6_esgjw"]
+[ext_resource type="AudioStream" uid="uid://c1ew6ptk5v73r" path="res://Ressources/448588__tedagame__f2.ogg" id="7_mwkwu"]
+[ext_resource type="AudioStream" uid="uid://0vujd04djlqa" path="res://Ressources/448589__tedagame__f3.ogg" id="8_xx3mj"]
+[ext_resource type="AudioStream" uid="uid://b4v5mitxp0ei8" path="res://Ressources/448595__tedagame__f4.ogg" id="9_37muw"]
+[ext_resource type="AudioStream" uid="uid://b0l2nxc3kn612" path="res://Ressources/687924__johnnie_holiday__jh-big-tom-2-f-15-sec.wav" id="9_acb4f"]
+
+[node name="Sound" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -20.0
+offset_right = 202.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Sound" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
+position = Vector2(75, 28)
+scale = Vector2(0.728843, 0.264778)
+texture = ExtResource("1_shag8")
+
+[node name="Sound2" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
+position = Vector2(75, 28)
+scale = Vector2(0.728843, 0.264778)
+texture = ExtResource("1_shag8")
+
+[node name="Sound3" type="Sprite2D" parent="HBoxContainer/VBoxContainer2"]
+position = Vector2(75, 28)
+scale = Vector2(0.728843, 0.264778)
+texture = ExtResource("1_shag8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Piano" type="Node2D" parent="HBoxContainer/VBoxContainer"]
+
+[node name="Do2" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Piano"]
+stream = ExtResource("3_f0vpy")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Do3" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Piano"]
+stream = ExtResource("5_meyea")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Do4" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Piano"]
+stream = ExtResource("6_esgjw")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa2" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Piano"]
+stream = ExtResource("7_mwkwu")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Piano"]
+stream = ExtResource("8_xx3mj")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Piano"]
+stream = ExtResource("9_37muw")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Tambour" type="Node2D" parent="HBoxContainer/VBoxContainer"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Tambour"]
+stream = ExtResource("9_acb4f")
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Tambour"]
+stream = ExtResource("9_acb4f")
+pitch_scale = 2.0
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/Tambour"]
+stream = ExtResource("9_acb4f")
+pitch_scale = 3.0
+script = ExtResource("3_xs0lo")
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 37.0
+value = 1.0
+tick_count = 36
+script = ExtResource("1_gjvrj")
+bus_name = "Tambour"
