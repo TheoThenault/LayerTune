@@ -8,3 +8,8 @@ func _on_pressed() -> void:
 	GAME.load_level(num_level)
 	GAME.MainMenu.hide()
 	GAME.LevelStart.show()
+	
+	GAME.current_layer = get_node("../../../LevelPlay/ContainerLayers/PlayLayer1")
+	if(GAME.current_layer):
+		GAME.current_layer.texture_normal = GAME.focus_image
+	
