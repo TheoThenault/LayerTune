@@ -7,8 +7,10 @@ extends Button
 #
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+func _process(delta: float) -> void:
+	if(GAME.confirmed_layer and GAME.current_level):
+		if(GAME.confirmed_layer == GAME.current_level.number_of_layer()):
+			self.disabled = true
 
 func _on_pressed() -> void:
 	print("Disable the layer, prevent player from modifying")
@@ -17,3 +19,4 @@ func _on_pressed() -> void:
 		GAME.current_layer.disabled = true
 		GAME.current_layer.note = GAME.SliderNote.value
 		GAME.current_layer.bpm  = GAME.SliderTempo.value
+		GAME.confirmed_layer += 1

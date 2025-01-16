@@ -91,6 +91,13 @@ func _ready() -> void:
 			layer6.note = note6
 			layer6.name = "PlayLayer6"
 			container.add_child(layer6)
-			
-	
-		
+
+func number_of_layer() -> int:
+	var res = 0
+	res += 1 if enable1 else 0
+	res += 1 if enable2 else 0
+	res += 1 if enable3 else 0
+	res += 1 if enable4 else 0
+	res += 1 if enable5 else 0
+	res += 1 if enable6 else 0
+	return res

@@ -6,12 +6,17 @@ extends Button
 	#pass # Replace with function body.
 #
 #
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if(GAME.confirmed_layer and GAME.current_level):
+		if(GAME.confirmed_layer == GAME.current_level.number_of_layer()):
+			self.disabled = false
 
 
 func _on_pressed() -> void:
 	print("Level finished go to \"LevelEnd\"")
+
+	GAME.verify_level()
+
 	GAME.LevelPlay.hide()
 	GAME.LevelEnd.show()
