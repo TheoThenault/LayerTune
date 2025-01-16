@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dmujn6am4j47e"]
+[gd_scene load_steps=32 format=3 uid="uid://dmujn6am4j47e"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_2iyyd"]
 [ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://cl6btp5juitp6" path="res://Ressources/Jokerman-Regular.ttf" id="2_o87ia"]
 [ext_resource type="Texture2D" uid="uid://bi4l4xi01y37f" path="res://Image/background.png" id="2_paslb"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_preview.gd" id="3_mnkht"]
+[ext_resource type="Theme" uid="uid://c3k4usnxckyd0" path="res://Themes/main_scene.tres" id="4_wq85p"]
 [ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_tempo.gd" id="5_vet10"]
 [ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="6_lh35v"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelplay_button_confirm_layer.gd" id="7_gadeu"]
@@ -68,7 +69,7 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.847059, 0.431373, 0.8, 1)
 theme_override_fonts/normal_font = ExtResource("2_o87ia")
-theme_override_font_sizes/normal_font_size = 110
+theme_override_font_sizes/normal_font_size = 128
 bbcode_enabled = true
 text = "[wave][center]LayerTune[/center][/wave]"
 fit_content = true
@@ -92,6 +93,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 42
 text = "1"
 script = ExtResource("1_4fi25")
@@ -102,6 +104,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 42
 text = "2"
 script = ExtResource("1_4fi25")
@@ -112,6 +115,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 42
 text = "3"
 script = ExtResource("1_4fi25")
@@ -122,6 +126,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 42
 text = "4"
 script = ExtResource("1_4fi25")
@@ -132,6 +137,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 42
 text = "5"
 script = ExtResource("1_4fi25")
@@ -142,6 +148,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 42
 text = "6"
 script = ExtResource("1_4fi25")
@@ -171,6 +178,7 @@ offset_left = 425.0
 offset_top = 489.0
 offset_right = 713.0
 offset_bottom = 583.0
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 62
 text = "Play level"
 script = ExtResource("2_56y8w")
@@ -217,6 +225,7 @@ offset_bottom = 223.0
 scale = Vector2(1.34049, 2.22772)
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_wq85p")
 min_value = 1.0
 max_value = 36.0
 value = 1.0
@@ -233,6 +242,7 @@ offset_bottom = 360.0
 scale = Vector2(1.34049, 2.22772)
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_wq85p")
 min_value = 50.0
 max_value = 200.0
 step = 5.0
@@ -246,6 +256,7 @@ offset_left = 425.0
 offset_top = 491.0
 offset_right = 775.0
 offset_bottom = 568.0
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 50
 text = "Confirm Layer"
 script = ExtResource("7_gadeu")
@@ -256,6 +267,7 @@ offset_left = 793.0
 offset_top = 491.0
 offset_right = 1143.0
 offset_bottom = 568.0
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 50
 disabled = true
 text = "Finish level"
@@ -390,6 +402,7 @@ offset_left = 297.0
 offset_top = 448.0
 offset_right = 466.0
 offset_bottom = 552.0
+theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 70
 text = "Menu"
 script = ExtResource("14_a35rm")

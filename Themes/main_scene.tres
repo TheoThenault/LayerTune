@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c3k4usnxckyd0"]
+
+[ext_resource type="StyleBox" uid="uid://oyomxf35numf" path="res://Themes/StyleBoxFlat/button_hover.tres" id="1_3f77u"]
+[ext_resource type="StyleBox" uid="uid://ptthf6ulg4wo" path="res://Themes/StyleBoxFlat/button_normal.tres" id="2_q32p3"]
+
+[resource]
+Button/colors/font_color = Color(0.243945, 0.221907, 0.0227968, 1)
+Button/styles/hover = ExtResource("1_3f77u")
+Button/styles/normal = ExtResource("2_q32p3")
