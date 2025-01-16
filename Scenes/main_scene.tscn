@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_level.gd" id="2_56y8w"]
 [ext_resource type="Texture2D" uid="uid://bbs1dfkyj0qeq" path="res://Image/1.png" id="2_batos"]
 [ext_resource type="FontFile" uid="uid://cl6btp5juitp6" path="res://Ressources/Jokerman-Regular.ttf" id="2_o87ia"]
+[ext_resource type="Texture2D" uid="uid://bi4l4xi01y37f" path="res://Image/background.png" id="2_paslb"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_preview.gd" id="3_mnkht"]
 [ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_tempo.gd" id="5_vet10"]
 [ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="6_lh35v"]
@@ -30,25 +31,17 @@
 [ext_resource type="AudioStream" uid="uid://bw6mh1uwotyf6" path="res://Ressources/214302__deleted_user_2296865__harmonicaf5.wav" id="24_h0arv"]
 [ext_resource type="AudioStream" uid="uid://crgjqmgbwiwhv" path="res://Ressources/607983__department64__humanatone_15.wav" id="25_qm4jt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8ng7"]
-bg_color = Color(0.663596, 0.585649, 0.504671, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color(0.588235, 0.462745, 0.223529, 1)
-border_blend = true
-
 [node name="MainScene" type="CanvasLayer"]
 script = ExtResource("1_2iyyd")
 
-[node name="PanelBackground" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_s8ng7")
+texture = ExtResource("2_paslb")
+expand_mode = 1
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 3
