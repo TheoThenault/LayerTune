@@ -23,8 +23,10 @@ func _on_pressed() -> void:
 		
 		if(GAME.current_layer.numero+1 < GAME.current_level.layers.size()):
 			if(GAME.current_layer):
-					GAME.current_layer.texture_normal = GAME.disabled_image
+				GAME.current_layer.texture_normal = GAME.disabled_image
 			GAME.current_layer = GAME.current_level.layers[GAME.current_layer.numero+1]
+			GAME.SliderNote.value = GAME.current_layer.note
+			GAME.SliderTempo.value = GAME.current_layer.bpm
 			if(GAME.current_layer):
 				GAME.current_layer.texture_normal = GAME.focus_image
 		

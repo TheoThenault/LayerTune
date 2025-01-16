@@ -18,4 +18,4 @@ func _on_pressed() -> void:
 	GAME.current_layer = GAME.current_level.layers[0]
 	AUDIO.play_level = false
 	AUDIO.play_layer = true
-	
+	AUDIO.silence()

@@ -27,10 +27,10 @@
 [ext_resource type="AudioStream" uid="uid://0vujd04djlqa" path="res://Ressources/448589__tedagame__f3.ogg" id="15_wuvay"]
 [ext_resource type="AudioStream" uid="uid://b4v5mitxp0ei8" path="res://Ressources/448595__tedagame__f4.ogg" id="16_3psh3"]
 [ext_resource type="AudioStream" uid="uid://b0l2nxc3kn612" path="res://Ressources/687924__johnnie_holiday__jh-big-tom-2-f-15-sec.wav" id="17_q5g2t"]
-[ext_resource type="AudioStream" uid="uid://f7krgann2vh2" path="res://Ressources/60068__hyena__flutef.wav" id="22_8t0th"]
 [ext_resource type="AudioStream" uid="uid://qwcfxjdl8hkk" path="res://Ressources/610198__chaoticnoize__04-f1.wav" id="23_y0ofv"]
-[ext_resource type="AudioStream" uid="uid://bw6mh1uwotyf6" path="res://Ressources/214302__deleted_user_2296865__harmonicaf5.wav" id="24_h0arv"]
 [ext_resource type="AudioStream" uid="uid://crgjqmgbwiwhv" path="res://Ressources/607983__department64__humanatone_15.wav" id="25_qm4jt"]
+[ext_resource type="AudioStream" uid="uid://cuwx1i8pamc01" path="res://Ressources/558123__johnnie_holiday__bamboo-flute-f(1).wav" id="28_0ruxc"]
+[ext_resource type="AudioStream" uid="uid://cu8fondspiq80" path="res://Ressources/116913__cbeeching__f-harmonica-2.wav" id="28_kuv6j"]
 
 [node name="MainScene" type="CanvasLayer"]
 script = ExtResource("1_2iyyd")
@@ -169,14 +169,14 @@ offset_left = 353.0
 offset_top = 198.0
 offset_right = 1002.0
 offset_bottom = 544.0
-scale = Vector2(0.848541, 0.721387)
+scale = Vector2(0.943, 0.8)
 texture = ExtResource("1_3jg70")
 
 [node name="ButtonPlayLevel" type="Button" parent="LevelStart"]
 layout_mode = 0
-offset_left = 425.0
+offset_left = 500.0
 offset_top = 489.0
-offset_right = 713.0
+offset_right = 788.0
 offset_bottom = 583.0
 theme = ExtResource("4_wq85p")
 theme_override_font_sizes/font_size = 62
@@ -216,11 +216,11 @@ theme_override_constants/separation = 1
 alignment = 1
 
 [node name="SliderNote" type="HSlider" parent="LevelPlay"]
-custom_minimum_size = Vector2(500, 0)
+custom_minimum_size = Vector2(475, 0)
 layout_mode = 0
 offset_left = 425.0
 offset_top = 198.0
-offset_right = 933.0
+offset_right = 875.0
 offset_bottom = 223.0
 scale = Vector2(1.34049, 2.22772)
 size_flags_horizontal = 3
@@ -233,11 +233,11 @@ tick_count = 4
 script = ExtResource("6_lh35v")
 
 [node name="SliderTempo" type="HSlider" parent="LevelPlay"]
-custom_minimum_size = Vector2(500, 0)
+custom_minimum_size = Vector2(475, 0)
 layout_mode = 2
 offset_left = 425.0
 offset_top = 335.0
-offset_right = 933.0
+offset_right = 875.0
 offset_bottom = 360.0
 scale = Vector2(1.34049, 2.22772)
 size_flags_horizontal = 3
@@ -288,9 +288,9 @@ script = ExtResource("11_vjmqv")
 
 [node name="LabelBPM" type="Label" parent="LevelPlay"]
 layout_mode = 0
-offset_left = 1143.0
+offset_left = 1075.0
 offset_top = 337.0
-offset_right = 1188.0
+offset_right = 1120.0
 offset_bottom = 391.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 39
@@ -298,9 +298,9 @@ text = "50"
 
 [node name="LabelNOTE" type="Label" parent="LevelPlay"]
 layout_mode = 0
-offset_left = 1143.0
+offset_left = 1075.0
 offset_top = 204.0
-offset_right = 1183.0
+offset_right = 1115.0
 offset_bottom = 258.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 39
@@ -463,18 +463,18 @@ script = ExtResource("11_0l65a")
 [node name="Flute" type="Node2D" parent="Sounds"]
 
 [node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Flute"]
-stream = ExtResource("22_8t0th")
+stream = ExtResource("28_0ruxc")
 bus = &"Flute"
 script = ExtResource("11_0l65a")
 
 [node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Flute"]
-stream = ExtResource("22_8t0th")
+stream = ExtResource("28_0ruxc")
 pitch_scale = 2.0
 bus = &"Flute"
 script = ExtResource("11_0l65a")
 
 [node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Flute"]
-stream = ExtResource("22_8t0th")
+stream = ExtResource("28_0ruxc")
 pitch_scale = 3.0
 bus = &"Flute"
 script = ExtResource("11_0l65a")
@@ -501,18 +501,18 @@ script = ExtResource("11_0l65a")
 [node name="Harmonica" type="Node2D" parent="Sounds"]
 
 [node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
-stream = ExtResource("24_h0arv")
+stream = ExtResource("28_kuv6j")
 bus = &"Harmonica"
 script = ExtResource("11_0l65a")
 
 [node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
-stream = ExtResource("24_h0arv")
+stream = ExtResource("28_kuv6j")
 pitch_scale = 2.0
 bus = &"Harmonica"
 script = ExtResource("11_0l65a")
 
 [node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
-stream = ExtResource("24_h0arv")
+stream = ExtResource("28_kuv6j")
 pitch_scale = 3.0
 bus = &"Harmonica"
 script = ExtResource("11_0l65a")

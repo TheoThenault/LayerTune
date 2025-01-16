@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxh8ldgtsbc2k"]
+
+[ext_resource type="Script" path="res://Levels/niveau_script.gd" id="1_mb3e4"]
+
+[node name="Niveau" type="Node"]
+script = ExtResource("1_mb3e4")
+enable1 = true
+instrument1 = "Drum"
+note1 = 13
+bpm1 = 160
+enable2 = true
+instrument2 = "Whistle"
+note2 = 8
+bpm2 = 75
+instrument3 = "Piano"
+note3 = 32
+bpm3 = 75

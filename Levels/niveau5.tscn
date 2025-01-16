@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://7g464basnarg"]
+
+[ext_resource type="Script" path="res://Levels/niveau_script.gd" id="1_uqo0q"]
+
+[node name="Niveau" type="Node"]
+script = ExtResource("1_uqo0q")
+enable1 = true
+instrument1 = "Flute"
+note1 = 32
+bpm1 = 100
+enable2 = true
+instrument2 = "Banjo"
+note2 = 12
+bpm2 = 50
+instrument3 = "Piano"
+note3 = 32
+bpm3 = 75

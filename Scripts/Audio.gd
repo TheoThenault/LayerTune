@@ -6,6 +6,7 @@ var play_player_level: bool
 var lastTimePlayed: Array[float]
 
 func playNote() -> void:
+	#AUDIO.silence()	
 	if(GAME.current_layer):
 		if (Time.get_unix_time_from_system() - lastTimePlayed[GAME.current_layer.numero] >= 60/GAME.current_bpm[GAME.current_layer.numero]):
 			GAME.pitchshifts[GAME.current_layer.numero].pitch_scale = pow(2, (GAME.current_note[GAME.current_layer.numero])/12.0)
@@ -50,3 +51,7 @@ func playAllRight() -> void:
 			GAME.pitchshifts[note].pitch_scale = pow(2, (current_note[note])/12.0)
 			GAME.current_note_stream[note].play()
 			lastTimePlayed[note] = Time.get_unix_time_from_system()
+
+func silence():
+	for stream in GAME.current_note_stream:
+		stream.stop()

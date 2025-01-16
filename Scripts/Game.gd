@@ -134,6 +134,11 @@ func load_level(numero : int) -> void:
 		get_node("/root/MainScene").add_child(current_level)
 
 func clean() -> void:
+	AUDIO.play_layer = false
+	AUDIO.play_level = false
+	AUDIO.play_player_level = false
+	AUDIO.silence()
+	
 	GAME.confirmed_layer = 0
 	GAME.current_layer = null
 	GAME.current_level = null

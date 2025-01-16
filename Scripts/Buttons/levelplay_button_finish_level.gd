@@ -17,6 +17,9 @@ func _on_pressed() -> void:
 	print("Level finished go to \"LevelEnd\"")
 	AUDIO.play_layer = false
 	AUDIO.play_level = false
+	AUDIO.play_player_level = false
+	AUDIO.silence()
+	
 	GAME.verify_level()
 
 	GAME.LevelPlay.hide()

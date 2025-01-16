@@ -6,12 +6,12 @@
 script = ExtResource("1_bm17h")
 enable1 = true
 instrument1 = "Piano"
-note1 = 22
-bpm1 = 100
+note1 = 30
+bpm1 = 50
 enable2 = true
 instrument2 = "Banjo"
-note2 = 19
-bpm2 = 125
+note2 = 33
+bpm2 = 150
 instrument3 = "Piano"
 note3 = 32
 bpm3 = 75
