@@ -3,6 +3,8 @@ extends Node
 var current_level
 
 var current_layer : int
+var current_note_stream : AudioStreamPlayer
+var current_bpm : int
 
 var MainMenu : Control
 var LevelStart : Control
@@ -36,6 +38,8 @@ func load_level(numero : int) -> void:
 		current_level.name = "NIVEAU"
 		get_node("/root/MainScene").add_child(current_level)
 	
-	
+func playNote() -> void:
+	if (GAME.LevelPlay.is_visible_in_tree()):
+		GAME.current_note_stream.play()
 	
 	

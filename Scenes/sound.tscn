@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cer25wms6k4dx"]
+[gd_scene load_steps=16 format=3 uid="uid://cer25wms6k4dx"]
 
 [ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="1_gjvrj"]
 [ext_resource type="Texture2D" uid="uid://g4tqhg3rwmng" path="res://Ressources/sound.jpg" id="1_shag8"]
@@ -10,6 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://0vujd04djlqa" path="res://Ressources/448589__tedagame__f3.ogg" id="8_xx3mj"]
 [ext_resource type="AudioStream" uid="uid://b4v5mitxp0ei8" path="res://Ressources/448595__tedagame__f4.ogg" id="9_37muw"]
 [ext_resource type="AudioStream" uid="uid://b0l2nxc3kn612" path="res://Ressources/687924__johnnie_holiday__jh-big-tom-2-f-15-sec.wav" id="9_acb4f"]
+[ext_resource type="AudioStream" uid="uid://4rbeffbjg5bd" path="res://Ressources/27359__junggle__djembe_loop_13.wav" id="11_nohyj"]
+[ext_resource type="AudioStream" uid="uid://f7krgann2vh2" path="res://Ressources/60068__hyena__flutef.wav" id="12_makjx"]
+[ext_resource type="AudioStream" uid="uid://qwcfxjdl8hkk" path="res://Ressources/610198__chaoticnoize__04-f1.wav" id="13_8m545"]
+[ext_resource type="AudioStream" uid="uid://bw6mh1uwotyf6" path="res://Ressources/214302__deleted_user_2296865__harmonicaf5.wav" id="14_us3qk"]
+[ext_resource type="AudioStream" uid="uid://crgjqmgbwiwhv" path="res://Ressources/607983__department64__humanatone_15.wav" id="15_u4bvo"]
 
 [node name="Sound" type="Control"]
 layout_mode = 3
@@ -113,3 +118,132 @@ value = 1.0
 tick_count = 36
 script = ExtResource("1_gjvrj")
 bus_name = "Tambour"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Piano" type="Node2D" parent="Sounds"]
+
+[node name="Do2" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("3_f0vpy")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Do3" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("5_meyea")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Do4" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("6_esgjw")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("7_mwkwu")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("8_xx3mj")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Piano"]
+stream = ExtResource("9_37muw")
+bus = &"Piano"
+script = ExtResource("3_xs0lo")
+
+[node name="Drum" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("11_nohyj")
+bus = &"Drum"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("11_nohyj")
+pitch_scale = 2.0
+bus = &"Drum"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Drum"]
+stream = ExtResource("11_nohyj")
+pitch_scale = 3.0
+bus = &"Drum"
+script = ExtResource("3_xs0lo")
+
+[node name="Flute" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("12_makjx")
+bus = &"Flute"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("12_makjx")
+pitch_scale = 2.0
+bus = &"Flute"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Flute"]
+stream = ExtResource("12_makjx")
+pitch_scale = 3.0
+bus = &"Flute"
+script = ExtResource("3_xs0lo")
+
+[node name="Banjo" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("13_8m545")
+bus = &"Banjo"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("13_8m545")
+pitch_scale = 2.0
+bus = &"Banjo"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Banjo"]
+stream = ExtResource("13_8m545")
+pitch_scale = 3.0
+bus = &"Banjo"
+script = ExtResource("3_xs0lo")
+
+[node name="Harmonica" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("14_us3qk")
+bus = &"Harmonica"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("14_us3qk")
+pitch_scale = 2.0
+bus = &"Harmonica"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Harmonica"]
+stream = ExtResource("14_us3qk")
+pitch_scale = 3.0
+bus = &"Harmonica"
+script = ExtResource("3_xs0lo")
+
+[node name="Whistle" type="Node2D" parent="Sounds"]
+
+[node name="Fa2" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("15_u4bvo")
+bus = &"Whistle"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa3" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("15_u4bvo")
+pitch_scale = 2.0
+bus = &"Whistle"
+script = ExtResource("3_xs0lo")
+
+[node name="Fa4" type="AudioStreamPlayer" parent="Sounds/Whistle"]
+stream = ExtResource("15_u4bvo")
+pitch_scale = 3.0
+bus = &"Whistle"
+script = ExtResource("3_xs0lo")
