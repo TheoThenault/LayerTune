@@ -1,5 +1,10 @@
 extends TextureButton
 
+class_name Layer
+
+@export
+var enable : int
+
 @export
 var numero : int
 
@@ -16,7 +21,7 @@ var note : int
 func _ready() -> void:
 	print("Nouvelle layer créée")
 
-func setup(num_ : int, bpm_ : int, instru_ : String, note_ : int) -> void:
+func setup(enable_ : bool, num_ : int, bpm_ : int, instru_ : String, note_ : int) -> void:
 	numero = num_
 	bpm = bpm_
 	instrument = instru_
@@ -25,5 +30,5 @@ func setup(num_ : int, bpm_ : int, instru_ : String, note_ : int) -> void:
 
 func _on_pressed() -> void:
 	print_rich("[wave]Layer pressed[/wave]")
-	GAME.current_layer = numero
+	GAME.current_layer = GAME.current_level.layers[numero]
 	

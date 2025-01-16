@@ -15,4 +15,7 @@ func _on_pressed() -> void:
 	print("Charger \"LevelPlay\" avec le bon niveau.")
 	GAME.LevelStart.hide()
 	GAME.LevelPlay.show()
+	GAME.current_layer = GAME.current_level.layers[0]
+	AUDIO.play_level = false
+	AUDIO.play_layer = true
 	

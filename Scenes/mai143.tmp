@@ -220,6 +220,7 @@ max_value = 36.0
 value = 1.0
 tick_count = 4
 script = ExtResource("6_lh35v")
+bus_name = "Piano"
 
 [node name="SliderTempo" type="HSlider" parent="LevelPlay"]
 custom_minimum_size = Vector2(500, 0)

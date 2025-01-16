@@ -117,7 +117,6 @@ max_value = 37.0
 value = 1.0
 tick_count = 36
 script = ExtResource("1_gjvrj")
-bus_name = "Tambour"
 
 [node name="Sounds" type="Node" parent="."]
 

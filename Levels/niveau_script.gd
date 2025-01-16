@@ -36,6 +36,8 @@ extends Node
 @export_range(1, 36) var note6 : int
 @export_range(50, 200, 5) var bpm6 : int
 
+var layers : Array[Layer]
+
 func _ready() -> void:
 	var container : VBoxContainer = get_node("../LevelPlay/ContainerLayers")
 	
@@ -45,52 +47,78 @@ func _ready() -> void:
 	else:
 		if(enable1):
 			var layer1 = layer_res.instantiate()
-			layer1.numero = 1
+			layer1.enable = enable1
+			layer1.numero = 0
 			layer1.instrument = instrument1
 			layer1.bpm = bpm1
 			layer1.note = note1
 			layer1.name = "PlayLayer1"
 			container.add_child(layer1)
+			layers.append(layer1)
 		if(enable2):
 			var layer2 = layer_res.instantiate()
-			layer2.numero = 2
+			layer2.enable = enable2
+			layer2.numero = 1
 			layer2.instrument = instrument2
 			layer2.bpm = bpm2
 			layer2.note = note2
 			layer2.name = "PlayLayer2"
 			container.add_child(layer2)
+			layers.append(layer2)
 		if(enable3):
 			var layer3 = layer_res.instantiate()
-			layer3.numero = 3
+			layer3.enable = enable3
+			layer3.numero = 2
 			layer3.instrument = instrument3
 			layer3.bpm = bpm3
 			layer3.note = note3
 			layer3.name = "PlayLayer3"
 			container.add_child(layer3)
+			layers.append(layer3)
 		if(enable4):
 			var layer4 = layer_res.instantiate()
-			layer4.numero = 4
+			layer4.enable = enable4
+			layer4.numero = 3
 			layer4.instrument = instrument4
 			layer4.bpm = bpm4
 			layer4.note = note4
 			layer4.name = "PlayLayer4"
 			container.add_child(layer4)
+			layers.append(layer4)
 		if(enable5):
 			var layer5 = layer_res.instantiate()
-			layer5.numero = 5
+			layer5.enable = enable5
+			layer5.numero = 4
 			layer5.instrument = instrument5
 			layer5.bpm = bpm5
 			layer5.note = note5
 			layer5.name = "PlayLayer5"
 			container.add_child(layer5)
+			layers.append(layer5)
 		if(enable6):
 			var layer6 = layer_res.instantiate()
-			layer6.numero = 6
+			layer6.enable = enable6
+			layer6.numero = 5
 			layer6.instrument = instrument6
 			layer6.bpm = bpm6
 			layer6.note = note6
 			layer6.name = "PlayLayer6"
 			container.add_child(layer6)
+			layers.append(layer6)
 			
-	
+	for layer in layers:
+		GAME.current_bpm.append(layer.bpm)
+		var bus_index = AudioServer.get_bus_index(layer.instrument)
+		var pitchshift = AudioEffectPitchShift.new()
+		GAME.pitchshifts.append(pitchshift)
+		AudioServer.add_bus_effect(bus_index, GAME.pitchshifts[layer.numero])
+		if (layer.note > 23):
+			GAME.pitchshifts[layer.numero].pitch_scale = pow(2, (note1-29)/12.0)
+			GAME.current_note_stream.append(get_node("../Sounds/"+layer.instrument+"/Fa4"))
+		elif (layer.note > 11):
+			GAME.pitchshifts[layer.numero].pitch_scale = pow(2, (note1-17)/12.0)
+			GAME.current_note_stream.append(get_node("../Sounds/"+layer.instrument+"/Fa3"))
+		else:
+			GAME.pitchshifts[layer.numero].pitch_scale = pow(2, (note1-5)/12.0)
+			GAME.current_note_stream.append(get_node("../Sounds/"+layer.instrument+"/Fa2"))
 		
