@@ -5,6 +5,7 @@ var current_layer : Layer
 var current_level_number : int
 var current_note_stream : Array[AudioStreamPlayer]
 var current_bpm : Array[float]
+var current_note: Array[float]
 var pitchshifts: Array[AudioEffectPitchShift]
 
 
@@ -131,3 +132,16 @@ func load_level(numero : int) -> void:
 		current_level = niveau_res.instantiate()
 		current_level.name = "NIVEAU"
 		get_node("/root/MainScene").add_child(current_level)
+
+func clean() -> void:
+	GAME.confirmed_layer = 0
+	GAME.current_layer = null
+	GAME.current_level = null
+	GAME.ConfirmLayer.disabled = false
+	GAME.FinishLevel.disabled = true
+	for pitchshift in GAME.pitchshifts:
+		pitchshift.pitch_scale = 1
+	GAME.pitchshifts.clear()
+	GAME.current_note.clear()
+	GAME.current_bpm.clear()
+	GAME.current_note_stream.clear()

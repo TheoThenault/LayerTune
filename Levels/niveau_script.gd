@@ -113,15 +113,14 @@ func _ready() -> void:
 		GAME.pitchshifts.append(pitchshift)
 		AudioServer.add_bus_effect(bus_index, GAME.pitchshifts[layer.numero])
 		if (layer.note > 23):
-			GAME.pitchshifts[layer.numero].pitch_scale = pow(2, (note1-29)/12.0)
+			GAME.current_note.append(layer.note-29)
 			GAME.current_note_stream.append(get_node("../Sounds/"+layer.instrument+"/Fa4"))
 		elif (layer.note > 11):
-			GAME.pitchshifts[layer.numero].pitch_scale = pow(2, (note1-17)/12.0)
+			GAME.current_note.append(layer.note-17)
 			GAME.current_note_stream.append(get_node("../Sounds/"+layer.instrument+"/Fa3"))
 		else:
-			GAME.pitchshifts[layer.numero].pitch_scale = pow(2, (note1-5)/12.0)
+			GAME.current_note.append(layer.note-5)
 			GAME.current_note_stream.append(get_node("../Sounds/"+layer.instrument+"/Fa2"))
-
 
 func number_of_layer() -> int:
 	var res = 0

@@ -13,3 +13,5 @@ extends TextureButton
 
 func _on_pressed() -> void:
 	print("Jouer la preview du son :)")
+	AUDIO.play_level = !AUDIO.play_level
+	AUDIO.play_player_level = false

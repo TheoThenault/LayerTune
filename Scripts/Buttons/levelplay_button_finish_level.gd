@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	print("Level finished go to \"LevelEnd\"")
-
+	AUDIO.play_layer = false
+	AUDIO.play_level = false
 	GAME.verify_level()
 
 	GAME.LevelPlay.hide()
