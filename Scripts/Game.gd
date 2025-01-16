@@ -2,24 +2,32 @@ extends Node
 
 var current_level
 
-var current_layer : int
+var current_layer
 
 var MainMenu : Control
 var LevelStart : Control
 var LevelPlay : Control
 var LevelEnd : Control
 
+var SliderNote : HSlider
+var SliderTempo : HSlider
+
+var norm_image = load("res://Image/SoundWave.png")
+var focus_image = load("res://Image/SoundWaveCurrent.png")
+var focus_disabled_image = load("res://Image/SoundWaveCurrentDisabled.png")
+var disabled_image = load("res://Image/SoundWaveValid.png")
+
 func setup() -> void:
 	MainMenu = get_node("/root/MainScene/MainMenu")
 	LevelStart = get_node("/root/MainScene/LevelStart")
 	LevelPlay = get_node("/root/MainScene/LevelPlay")
 	LevelEnd = get_node("/root/MainScene/LevelEnd")
-
-func verify_layer() -> void:
-	print("Vérification de la layer %d" % current_layer)
+	
+	SliderNote = get_node("/root/MainScene/LevelPlay/SliderNote")
+	SliderTempo = get_node("/root/MainScene/LevelPlay/SliderTempo")
 
 func verify_level() -> Array[bool]:
-	print("Vérification du niveau %d" % current_level)
+	print("Vérification du niveau %d" % current_level)	
 	return [true, false]
 
 func load_level(numero : int) -> void:	

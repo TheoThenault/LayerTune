@@ -1,6 +1,5 @@
 extends TextureButton
 
-@export
 var numero : int
 
 @export
@@ -25,5 +24,16 @@ func setup(num_ : int, bpm_ : int, instru_ : String, note_ : int) -> void:
 
 func _on_pressed() -> void:
 	print_rich("[wave]Layer pressed[/wave]")
-	GAME.current_layer = numero
-	
+
+	if(GAME.current_layer):
+		if(GAME.current_layer.disabled):
+			GAME.current_layer.texture_normal = GAME.disabled_image
+		else:
+			GAME.current_layer.texture_normal = GAME.norm_image
+
+	GAME.current_layer = self
+
+	if(disabled):
+		GAME.current_layer.texture_normal = GAME.focus_disabled_image
+	else:
+		GAME.current_layer.texture_normal = GAME.focus_image

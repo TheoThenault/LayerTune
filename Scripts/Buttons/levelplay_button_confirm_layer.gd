@@ -11,5 +11,9 @@ extends Button
 	#pass
 
 func _on_pressed() -> void:
-	print("Confirm layer pressed, verify if values are good :)")
-	GAME.verify_layer()
+	print("Disable the layer, prevent player from modifying")
+	
+	if(!disabled and GAME.current_layer):
+		GAME.current_layer.disabled = true
+		GAME.current_layer.note = GAME.SliderNote.value
+		GAME.current_layer.bpm  = GAME.SliderTempo.value
