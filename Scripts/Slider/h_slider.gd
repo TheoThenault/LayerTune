@@ -6,7 +6,7 @@ func _ready() -> void:
 func _on_value_changed(value: float) -> void:
 	
 	var labelNOTE : Label = get_node("../LabelNOTE")
-	labelNOTE.text = "%d" % (value + 1)
+	labelNOTE.text = "%d" % value
 	
 	if (value > 23):
 		GAME.pitchshifts[GAME.current_layer.numero].pitch_scale = pow(2, (value-29)/12.0)

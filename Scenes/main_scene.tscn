@@ -276,18 +276,22 @@ script = ExtResource("11_vjmqv")
 
 [node name="LabelBPM" type="Label" parent="LevelPlay"]
 layout_mode = 0
-offset_left = 1148.0
-offset_top = 349.0
+offset_left = 1143.0
+offset_top = 337.0
 offset_right = 1188.0
-offset_bottom = 372.0
+offset_bottom = 391.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
 text = "50"
 
 [node name="LabelNOTE" type="Label" parent="LevelPlay"]
 layout_mode = 0
-offset_left = 1148.0
-offset_top = 216.0
-offset_right = 1188.0
-offset_bottom = 239.0
+offset_left = 1143.0
+offset_top = 204.0
+offset_right = 1183.0
+offset_bottom = 258.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
 text = "1"
 
 [node name="LevelEnd" type="Control" parent="."]
