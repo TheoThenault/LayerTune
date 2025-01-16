@@ -49,6 +49,7 @@ func _ready() -> void:
 			layer1.instrument = instrument1
 			layer1.bpm = bpm1
 			layer1.note = note1
+			layer1.name = "PlayLayer1"
 			container.add_child(layer1)
 		if(enable2):
 			var layer2 = layer_res.instantiate()
@@ -56,6 +57,7 @@ func _ready() -> void:
 			layer2.instrument = instrument2
 			layer2.bpm = bpm2
 			layer2.note = note2
+			layer2.name = "PlayLayer2"
 			container.add_child(layer2)
 		if(enable3):
 			var layer3 = layer_res.instantiate()
@@ -63,6 +65,7 @@ func _ready() -> void:
 			layer3.instrument = instrument3
 			layer3.bpm = bpm3
 			layer3.note = note3
+			layer3.name = "PlayLayer3"
 			container.add_child(layer3)
 		if(enable4):
 			var layer4 = layer_res.instantiate()
@@ -70,6 +73,7 @@ func _ready() -> void:
 			layer4.instrument = instrument4
 			layer4.bpm = bpm4
 			layer4.note = note4
+			layer4.name = "PlayLayer4"
 			container.add_child(layer4)
 		if(enable5):
 			var layer5 = layer_res.instantiate()
@@ -77,6 +81,7 @@ func _ready() -> void:
 			layer5.instrument = instrument5
 			layer5.bpm = bpm5
 			layer5.note = note5
+			layer5.name = "PlayLayer5"
 			container.add_child(layer5)
 		if(enable6):
 			var layer6 = layer_res.instantiate()
@@ -84,6 +89,7 @@ func _ready() -> void:
 			layer6.instrument = instrument6
 			layer6.bpm = bpm6
 			layer6.note = note6
+			layer6.name = "PlayLayer6"
 			container.add_child(layer6)
 			
 	
