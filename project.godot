@@ -19,6 +19,7 @@ config/icon="res://Image/logo_export.svg"
 [autoload]
 
 GAME="*res://Scripts/Game.gd"
+AUDIO="*res://Scripts/Audio.gd"
 
 [display]
 

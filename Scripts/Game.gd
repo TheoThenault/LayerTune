@@ -1,8 +1,12 @@
 extends Node
 
-var current_level
+var current_level : Node
+var current_layer : Layer
 var current_level_number : int
-var current_layer
+var current_note_stream : Array[AudioStreamPlayer]
+var current_bpm : Array[float]
+var pitchshifts: Array[AudioEffectPitchShift]
+
 
 var MainMenu : Control
 var LevelStart : Control
@@ -105,7 +109,6 @@ func verify_level() -> void:
 		get_node(
 			"/root/MainScene/MainMenu/HBoxContainer/ButtonLevel%d" % current_level_number
 		).disabled = true
-	
 
 func load_level(numero : int) -> void:	
 	print("Chargement du niveau %d" % numero)
