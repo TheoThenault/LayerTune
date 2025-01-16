@@ -47,7 +47,8 @@ func verify_level() -> void:
 	
 	var container = get_node("/root/MainScene/LevelPlay/ContainerLayers")
 	for layer in container.get_children():
-		print("%d | %d" % [layer.note, layer.bpm] )
+		print("size: %d" % res.size())
+		print("%d | %d | %d" % [layer.numero, layer.note, layer.bpm] )
 		print("%d | %d" % [current_level.note1, current_level.bpm1])
 		print("%d | %d" % [current_level.note2, current_level.bpm2])
 		print("%d | %d" % [current_level.note3, current_level.bpm3])
@@ -55,37 +56,42 @@ func verify_level() -> void:
 		print("%d | %d" % [current_level.note5, current_level.bpm5])
 		print("%d | %d" % [current_level.note6, current_level.bpm6])
 		
-		if(layer.numero == 1):
+		if(layer.numero+1 == 1):
 			if(layer.note == current_level.note1 and
 			   layer.bpm  == current_level.bpm1):
 				res.append(true)
 			else:
 				res.append(false)
-		if(layer.numero == 2):
+				
+		if(layer.numero+1 == 2):
 			if(layer.note == current_level.note2 and
 			   layer.bpm  == current_level.bpm2):
 				res.append(true)
 			else:
 				res.append(false)
-		if(layer.numero == 3):
+				
+		if(layer.numero+1 == 3):
 			if(layer.note == current_level.note3 and
 			   layer.bpm  == current_level.bpm3):
 				res.append(true)
 			else:
 				res.append(false)
-		if(layer.numero == 4):
+				
+		if(layer.numero+1 == 4):
 			if(layer.note == current_level.note4 and
 			   layer.bpm  == current_level.bpm4):
 				res.append(true)
 			else:
 				res.append(false)
-		if(layer.numero == 5):
+				
+		if(layer.numero+1 == 5):
 			if(layer.note == current_level.note5 and
 			   layer.bpm  == current_level.bpm5):
 				res.append(true)
 			else:
 				res.append(false)
-		if(layer.numero == 6):
+				
+		if(layer.numero+1 == 6):
 			if(layer.note == current_level.note6 and
 			   layer.bpm  == current_level.bpm6):
 				res.append(true)

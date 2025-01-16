@@ -5,9 +5,10 @@ var play_level: bool
 var lastTimePlayed: Array[float]
 
 func playNote() -> void:
-	if (Time.get_unix_time_from_system() - lastTimePlayed[GAME.current_layer.numero] >= 60/GAME.current_bpm[GAME.current_layer.numero]):
-		GAME.current_note_stream[GAME.current_layer.numero].play()
-		lastTimePlayed[GAME.current_layer.numero] = Time.get_unix_time_from_system()
+	if(GAME.current_layer):
+		if (Time.get_unix_time_from_system() - lastTimePlayed[GAME.current_layer.numero] >= 60/GAME.current_bpm[GAME.current_layer.numero]):
+			GAME.current_note_stream[GAME.current_layer.numero].play()
+			lastTimePlayed[GAME.current_layer.numero] = Time.get_unix_time_from_system()
 	
 func playAll() -> void:
 	for note in range(0, GAME.current_note_stream.size()):

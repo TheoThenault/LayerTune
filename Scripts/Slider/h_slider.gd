@@ -1,7 +1,7 @@
 extends HSlider
 
 func _ready() -> void:
-	_on_value_changed(value)
+	pass
 
 func _on_value_changed(value: float) -> void:
 	
