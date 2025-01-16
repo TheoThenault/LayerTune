@@ -14,7 +14,7 @@ config/name="LayerTune"
 run/main_scene="res://Scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://Image/NecoArc.png"
-config/icon="res://icon.svg"
+config/icon="res://Image/logo_export.svg"
 
 [autoload]
 
