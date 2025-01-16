@@ -25,10 +25,9 @@ func _ready() -> void:
 		lastTimePlayed.append(Time.get_unix_time_from_system())
 
 func _process(delta: float) -> void:
-	
-	if (play_level && play_player_level):
+	if (play_level and play_player_level):
 		AUDIO.playAll()
-	elif (play_level && !play_player_level):
+	elif (play_level and !play_player_level):
 		AUDIO.playAllRight()
 	elif (play_layer):
 		AUDIO.playNote()
@@ -37,14 +36,18 @@ func playAllRight() -> void:
 	var current_bpm : Array[float]
 	var current_note : Array[float]
 	
-	for layer in GAME.current_level.layers:
+	for layer in GAME.current_level.right_layers:
 		current_bpm.append(layer.bpm)
 		if (layer.note > 23):
 			current_note.append(layer.note-29)
+			GAME.current_note_stream[layer.numero] = get_node("../MainScene/Sounds/"+layer.instrument+"/Fa4")
 		elif (layer.note > 11):
 			current_note.append(layer.note-17)
+			GAME.current_note_stream[layer.numero] = get_node("../MainScene/Sounds/"+layer.instrument+"/Fa3")
 		else:
 			current_note.append(layer.note-5)
+			GAME.current_note_stream[layer.numero] = get_node("../MainScene/Sounds/"+layer.instrument+"/Fa2")
+
 		
 	for note in range(0, GAME.current_note_stream.size()):
 		if (Time.get_unix_time_from_system() - lastTimePlayed[note] >= 60/current_bpm[note]):

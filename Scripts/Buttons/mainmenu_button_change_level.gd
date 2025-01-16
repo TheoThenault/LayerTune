@@ -12,6 +12,6 @@ func _on_pressed() -> void:
 	GAME.current_layer = get_node("../../../LevelPlay/ContainerLayers/PlayLayer1")
 	if(GAME.current_layer):
 		GAME.current_layer.texture_normal = GAME.focus_image
-		GAME.SliderNote.value = GAME.current_layer.note
-		GAME.SliderTempo.value = GAME.current_layer.bpm
+		GAME.current_note[GAME.current_layer.numero] = GAME.SliderNote.value
+		GAME.current_bpm[GAME.current_layer.numero] = GAME.SliderTempo.value
 	

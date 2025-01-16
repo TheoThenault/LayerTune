@@ -37,6 +37,7 @@ extends Node
 @export_range(50, 200, 5) var bpm6 : int
 
 var layers : Array[Layer]
+var right_layers : Array[Layer]
 
 func _ready() -> void:
 	var container : VBoxContainer = get_node("../LevelPlay/ContainerLayers")
@@ -105,6 +106,9 @@ func _ready() -> void:
 			layer6.name = "PlayLayer6"
 			container.add_child(layer6)
 			layers.append(layer6)
+		
+	for layer in layers:
+		right_layers.append(layer.duplicate())
 	
 	for layer in layers:
 		GAME.current_bpm.append(layer.bpm)
