@@ -105,7 +105,7 @@ func _ready() -> void:
 			layer6.name = "PlayLayer6"
 			container.add_child(layer6)
 			layers.append(layer6)
-			
+	
 	for layer in layers:
 		GAME.current_bpm.append(layer.bpm)
 		var bus_index = AudioServer.get_bus_index(layer.instrument)
@@ -121,4 +121,14 @@ func _ready() -> void:
 		else:
 			GAME.pitchshifts[layer.numero].pitch_scale = pow(2, (note1-5)/12.0)
 			GAME.current_note_stream.append(get_node("../Sounds/"+layer.instrument+"/Fa2"))
-		
+
+
+func number_of_layer() -> int:
+	var res = 0
+	res += 1 if enable1 else 0
+	res += 1 if enable2 else 0
+	res += 1 if enable3 else 0
+	res += 1 if enable4 else 0
+	res += 1 if enable5 else 0
+	res += 1 if enable6 else 0
+	return res

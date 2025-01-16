@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://dmujn6am4j47e"]
+[gd_scene load_steps=31 format=3 uid="uid://dmujn6am4j47e"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_2iyyd"]
 [ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="1_3jg70"]
 [ext_resource type="Script" path="res://Scripts/Buttons/mainmenu_button_change_level.gd" id="1_4fi25"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_level.gd" id="2_56y8w"]
 [ext_resource type="Texture2D" uid="uid://bbs1dfkyj0qeq" path="res://Image/1.png" id="2_batos"]
+[ext_resource type="FontFile" uid="uid://cl6btp5juitp6" path="res://Ressources/Jokerman-Regular.ttf" id="2_o87ia"]
 [ext_resource type="Script" path="res://Scripts/Buttons/levelstart_play_preview.gd" id="3_mnkht"]
 [ext_resource type="Script" path="res://Scripts/Slider/levelplay_slider_tempo.gd" id="5_vet10"]
 [ext_resource type="Script" path="res://Scripts/Slider/h_slider.gd" id="6_lh35v"]
@@ -72,6 +73,8 @@ theme_override_constants/margin_bottom = 144
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/CenterContainer/MarginContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_override_colors/default_color = Color(0.847059, 0.431373, 0.8, 1)
+theme_override_fonts/normal_font = ExtResource("2_o87ia")
 theme_override_font_sizes/normal_font_size = 110
 bbcode_enabled = true
 text = "[wave][center]LayerTune[/center][/wave]"
@@ -96,6 +99,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 42
 text = "1"
 script = ExtResource("1_4fi25")
 num_level = 1
@@ -105,6 +109,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 42
 text = "2"
 script = ExtResource("1_4fi25")
 num_level = 2
@@ -114,6 +119,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 42
 text = "3"
 script = ExtResource("1_4fi25")
 num_level = 3
@@ -123,6 +129,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 42
 text = "4"
 script = ExtResource("1_4fi25")
 num_level = 4
@@ -132,6 +139,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 42
 text = "5"
 script = ExtResource("1_4fi25")
 num_level = 5
@@ -141,6 +149,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 42
 text = "6"
 script = ExtResource("1_4fi25")
 num_level = 6
@@ -234,7 +243,7 @@ size_flags_vertical = 3
 min_value = 50.0
 max_value = 200.0
 step = 5.0
-value = 100.0
+value = 50.0
 tick_count = 16
 script = ExtResource("5_vet10")
 
@@ -255,6 +264,7 @@ offset_top = 491.0
 offset_right = 1143.0
 offset_bottom = 568.0
 theme_override_font_sizes/font_size = 50
+disabled = true
 text = "Finish level"
 script = ExtResource("8_otq3q")
 
@@ -331,14 +341,12 @@ texture = ExtResource("10_7a3ra")
 expand_mode = 2
 
 [node name="EndLayer5" type="TextureRect" parent="LevelEnd/ContainerLayers"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("11_8182c")
 expand_mode = 2
 
 [node name="EndLayer6" type="TextureRect" parent="LevelEnd/ContainerLayers"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("10_7a3ra")

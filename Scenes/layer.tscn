@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://co6vwoemd2pny"]
+[gd_scene load_steps=6 format=3 uid="uid://co6vwoemd2pny"]
 
 [ext_resource type="Texture2D" uid="uid://8fjtn5g207no" path="res://Image/SoundWaveCurrent.png" id="1_yuqr3"]
 [ext_resource type="Texture2D" uid="uid://ditsgdqkg6mbf" path="res://Image/SoundWave.png" id="2_l5854"]
 [ext_resource type="Texture2D" uid="uid://bl2rnvccvft03" path="res://Image/SoundWaveHover.png" id="3_8tc5i"]
+[ext_resource type="Texture2D" uid="uid://sicjh7a4w5we" path="res://Image/SoundWaveValid.png" id="4_5yp7x"]
 [ext_resource type="Script" path="res://Scripts/layer.gd" id="4_arvlg"]
 
 [node name="PlayLayer" type="TextureButton"]
 size_flags_vertical = 3
+focus_mode = 0
 texture_normal = ExtResource("2_l5854")
 texture_pressed = ExtResource("1_yuqr3")
 texture_hover = ExtResource("3_8tc5i")
-texture_disabled = ExtResource("2_l5854")
+texture_disabled = ExtResource("4_5yp7x")
 texture_focused = ExtResource("1_yuqr3")
 ignore_texture_size = true
 stretch_mode = 0

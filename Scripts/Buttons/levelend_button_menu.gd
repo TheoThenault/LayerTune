@@ -24,4 +24,12 @@ func _on_pressed() -> void:
 	if(niveau):
 		niveau.queue_free()
 	
+	print("Valider l niveau si bon")
+	
+	GAME.confirmed_layer = 0
+	GAME.current_layer = null
+	GAME.current_level = null
+	GAME.ConfirmLayer.disabled = false
+	GAME.FinishLevel.disabled = true
+	
 	
