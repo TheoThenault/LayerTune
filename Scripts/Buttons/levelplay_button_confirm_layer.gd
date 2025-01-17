@@ -25,6 +25,8 @@ func _on_pressed() -> void:
 			if(GAME.current_layer):
 				GAME.current_layer.texture_normal = GAME.disabled_image
 			GAME.current_layer = GAME.current_level.layers[GAME.current_layer.numero+1]
+			GAME.SliderNote.value = 1
+			GAME.SliderTempo.value = 50
 			GAME.current_note[GAME.current_layer.numero] = GAME.SliderNote.value
 			GAME.current_bpm[GAME.current_layer.numero] = GAME.SliderTempo.value
 			if(GAME.current_layer):
